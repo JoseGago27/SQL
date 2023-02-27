@@ -1,0 +1,28 @@
+--Create a store Database
+
+CREATE TABLE store (id integer primary key, name text, quantity integer, price integer, color text);
+
+INSERT INTO store VALUES (1, "motocicleta", 2, 4000, "amarillo");
+INSERT INTO store VALUES (2, "CHANCLETAS", 4, 3000, "AZUL");
+INSERT INTO store VALUES (3, "CUNICUACS", 6, 2000, "ROSADO");
+INSERT INTO store VALUES (4, "PUERTAS", 10, 1000, "BLANCAS");
+INSERT INTO store VALUES (5, "VENTANAS", 11, 9090, "NEGRAS");
+INSERT INTO store VALUES (6, "PISOS", 99, 1200, "FIUCHA");
+INSERT INTO store VALUES (7, "CANAS", 999,1000, "FAANN");
+INSERT INTO store VALUES (8, "NOSE", 99, 19287, "AZUL");
+INSERT INTO store VALUES (9, "CUACN", 37, 585, "BLANCO");
+INSERT INTO store VALUES (10, "CUCN", 37, 585, "BLANCO");
+INSERT INTO store VALUES (11, "ASF", 33, 49854, "CAAND");
+INSERT INTO store VALUES (12, "UACN", 37, 585, "BLANCO");
+INSERT INTO store VALUES (13, "CCN", 37, 585, "BLANCO");
+INSERT INTO store VALUES (14, "NS", 37, 585, "BLANCO");
+INSERT INTO store VALUES (15, "CDN", 37, 585, "BLANCO");
+
+-- Order items by price
+
+SELECT price FROM store
+order by price;
+
+--Summarize all the prices
+
+SELECT price ,SUM (price) from store;
