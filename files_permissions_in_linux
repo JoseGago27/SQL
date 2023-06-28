@@ -1,0 +1,40 @@
+File permissions in Linux
+
+
+Project description
+You are a security professional at a large organization. You mainly work with their research team. Part of your job is to ensure users on this team are authorized with the appropriate permissions. This helps keep the system secure. 
+Your task is to examine existing permissions on the file system. You’ll need to determine if the permissions match the authorization that should be given. If they do not match, you’ll need to modify the permissions to authorize the appropriate users and remove any unauthorized access.
+
+
+Check file and directory details
+ls -la
+
+
+Describe the permissions string
+drwx—x--- drafts
+In this string the first letter (d) means that is a directory, the follow 3 letters are for the user and it means that the user has (r)read(w)write(x)execute permission to that directory named drafts
+
+
+Change file permissions
+The organization does not allow other to have write access to any files. So we have to change the permissions to the file named project_k.txt, for this we use the command chmod
+
+chmod o-w project_k.txt
+
+With this command, we remove the (w)write permission, the the (o)other group
+
+
+Change file permissions on a hidden file
+The research team has archived .project_x.txt, which is why it’s a hidden file. This file should not have write permissions for anyone, but the user and group should be able to read the file. 
+For this we have to remove the (w) write permission from user and group, and (w)write and (r) read from others.
+
+chmod u-w, g-w, o-r-w .project_x.txt
+
+
+Change directory permissions
+The files and directories in the projects directory belong to the researcher2 user. Only researcher2 should be allowed to access the drafts directory and its contents.
+
+chmod g-x drafts
+
+
+Summary
+This scenario involves investigating and updating file permissions.
